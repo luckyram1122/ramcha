@@ -26,7 +26,6 @@ pipeline {
 				sh "mvn package"
 			}
 		}
-	}
 	post {
 		success {
 			echo 'job was built successfully'
@@ -35,5 +34,5 @@ pipeline {
 			echo 'job was not build..it was failed'
 		}
 	}
+    }
 }
-
