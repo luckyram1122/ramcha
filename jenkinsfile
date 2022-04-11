@@ -3,7 +3,7 @@ pipeline {
 	stages {
 		stage('---clean---'){
 			tools {
-				maven 'maven3.8.5'
+				maven 'mvn3.8.5'
 			}
 			steps {
 				
@@ -12,7 +12,7 @@ pipeline {
 		}
 		stage('---test---') {
 			tools {
-				maven 'maven3.8,1'
+				maven 'mvn3.8.3'
 			}
 			steps {
 				
@@ -26,7 +26,7 @@ pipeline {
 				sh "mvn package"
 			}
 		}
-           }
+	}
 	post {
 		success {
 			echo 'job was built successfully'
@@ -35,5 +35,4 @@ pipeline {
 			echo 'job was not build..it was failed'
 		}
 	}
-    }
 }
